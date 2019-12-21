@@ -15,13 +15,8 @@ daily_reset = '23:00'
 async def on_ready():
   print('Bot online.')
   print(bot.user)
-  #channel = bot.get_guild(572663940375379988).get_channel(572663940375379990)
-  #text = 'test'
-  #role_post = await channel.send(text)
-  #await role_post.add_reaction('🙂')
 
-
-# !test command, should just say beep
+# !test123 command, should just say beep
 @bot.command()
 async def test123(beep):
   await beep.send('Today\'s day of year: ' + str(pendulum.now(tz='US/Pacific').day_of_year) + '\nDay of year of the 31st: ' + str(pendulum.date(2019, 5, 31).day_of_year))
@@ -73,7 +68,7 @@ async def points(ctx,pt):
     )
     await ctx.send(content=None, embed=points_report)
     return
-  # okay honestly, the rest of this is going to be a fucking mess, I'm just making my old code work for now
+  # okay honestly, the rest of this is going to be a hecking mess, I'm just making my old code work for now
   major_event_name = pt_event.name
   major_PT = pt_event.event_pt
   major_farm_PT = pt_event.lastmap_pt
@@ -185,7 +180,7 @@ async def points(ctx,pt):
   return
 
 
-# improvement: use emoji 1/2/3 for the last three days
+# improvement(?): use emoji 1/2/3 for the last three days
 async def daily():
   await bot.wait_until_ready()
   #post the report, but only at daily reset time
@@ -197,18 +192,13 @@ async def daily():
       # generate the report detailing event info
       report = generate_daily_report(todays_date)
       #now drop it in the bot spam channel
-      await bot.get_guild(572663940375379988).get_channel(572674736283189248).send(content=None, embed=report)
-    await asyncio.sleep(60)
+      await bot.get_guild(139255063787864064).get_channel(572674736283189248).send(content=None, embed=report)
+    await asyncio.sleep(50)
 
 def generate_daily_report(todays_date):
   #some improvements need to be made to report generation
-  #pvp season information needs to be calculated, 15 day chunks
-  #perhaps it's best to reserve reporting pvp in the daily report for, let's say...
-  #first day, AotN day, last day
   #last day before core shop reset
   #last day befpre token shop removal
-  #there'll be a negative days remaining issue in december
-  #is there a way to automatically
 
   #get the list fresh
   events_list = read_events_list()
@@ -289,7 +279,7 @@ async def manualreport(ctx):
 
   # kirakira test server 572663940375379988 / channel 572663940375379990
   # yakumo server 139255063787864064 / channel 572674736283189248
-  await bot.get_guild(572663940375379988).get_channel(572663940375379990).send(content=None, embed=report)
+  await bot.get_guild(139255063787864064).get_channel(572674736283189248).send(content=None, embed=report)
 
 @bot.event
 async def on_raw_reaction_add(payload):
