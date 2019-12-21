@@ -1,3 +1,5 @@
+# deprecated version for archival purposes - has since been completely rewritten
+
 import discord
 import os
 import pendulum

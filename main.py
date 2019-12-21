@@ -16,21 +16,11 @@ async def on_ready():
   print('Bot online.')
   print(bot.user)
 
-# !test123 command, should just say beep
+# !test123 command, should just say the date
 @bot.command()
 async def test123(beep):
   await beep.send('Today\'s day of year: ' + str(pendulum.now(tz='US/Pacific').day_of_year) + '\nDay of year of the 31st: ' + str(pendulum.date(2019, 5, 31).day_of_year))
 
-#@bot.command()
-#async def stealemoji(msg):
-#  theft = msg.content()[11:]
-#  if theft(0) != ':' or theft(-1) != ':':
-#    print('Something went wrong with your request.\n' +
-#    'Correct usage of this command looks like this: ' +
-#    '`>stealemoji :bacon:`')
-#  else:
-#    print()
-  #>stealemoji :derp: starts at index 11
 
 @bot.command()
 async def points(ctx,pt):
@@ -260,7 +250,6 @@ def generate_daily_report(todays_date):
           # the order of doing that is really weird, and could be done better
           # I just don't give a shit right now, because it works.
   # add a message if there are no events running
-  #print(str(report.fields))
   if str(report.fields) == '[]':
     report.add_field(
       name = 'Tranquil seas today',
@@ -275,7 +264,7 @@ async def manualreport(ctx):
   #generate the report
   report = generate_daily_report(todays_date)
   #now drop it in the bot spam channel
-  #fix that: send to ctx's channel instead
+  #upgrade: allow specific server to be targeted
 
   # kirakira test server 572663940375379988 / channel 572663940375379990
   # yakumo server 139255063787864064 / channel 572674736283189248
