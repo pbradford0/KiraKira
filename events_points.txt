@@ -1,0 +1,5 @@
+Scherzo_of_Iron_and_Blood Iron_Blood_Coat_of_Arms 180 700 800 41550 32250
+Iris_of_Light_and_Dark Iris_Écu 180 700 0 47600 38300
+Ashen_Simulacrum Black_Battle_Stars 180 700 880 41550 32250
+Empyreal_Tragicomedy Sardegna's_Glory 180 700 800 57550 48250
+Looking_Glass_of_Fact_and_Fiction P-TNT 150 700 800 57550 48250
