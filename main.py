@@ -8,7 +8,7 @@ from discord.ext import commands
 from keep_alive import keep_alive
 
 bot = commands.Bot(command_prefix='>', self_bot=False)
-daily_reset = '23:00'
+daily_reset = '00:00'
 
 # initialize
 @bot.event
@@ -176,14 +176,18 @@ async def daily():
   #post the report, but only at daily reset time
   while (True):
     the_time = pendulum.now('US/Pacific').strftime('%H:%M')
+    # print(the_time) debug
     if the_time == daily_reset:
       # update today's date and dates on remaining events
       todays_date = pendulum.now('US/Pacific')
+      print(todays_date)
       # generate the report detailing event info
       report = generate_daily_report(todays_date)
       #now drop it in the bot spam channel
+      # kirakira test server 572663940375379988 / channel 572663940375379990
+      # yakumo server 139255063787864064 / channel 572674736283189248
       await bot.get_guild(139255063787864064).get_channel(572674736283189248).send(content=None, embed=report)
-    await asyncio.sleep(50)
+    await asyncio.sleep(60)
 
 def generate_daily_report(todays_date):
   #some improvements need to be made to report generation
