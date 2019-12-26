@@ -3,3 +3,4 @@ Iris_of_Light_and_Dark Iris_Écu 180 700 0 47600 38300
 Ashen_Simulacrum Black_Battle_Stars 180 700 880 41550 32250
 Empyreal_Tragicomedy Sardegna's_Glory 180 700 800 57550 48250
 Looking_Glass_of_Fact_and_Fiction P-TNT 150 700 800 57550 48250
+Swirling_Cherry_Blossoms Ceremonial_Jewels 180 700 800 114500 57300
