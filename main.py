@@ -131,7 +131,7 @@ async def points(ctx,pt):
         value = 'Completing SP daily, in addition to your missions, will bring your final-day total to *' + str(pt_total_now_daily_black) + ' ' + major_PT +
           '.*\n In order to buy out the full event shop, you will need to clear D3 **' + str(maps_farmed) + ' times** *if you skip or cannot complete SP*' +
           '.\n Clearing both your missions and SP daily reduces your D3 clear count to **' + str(maps_farmed_black) + ' times**'
-          '.\n\n You can save 9300 ' + major_PT + ' by not purchasing the T4 Tech Packs or T3 Parts, reducing your number of D3 clears required' +
+          '.\n\n You can save 57,300 ' + major_PT + ' by skipping the T4 Tech Packs, T3 Parts, and four of the five ship copies, reducing your number of D3 clears required' +
           '.\n You will only need to clear **' + str(maps_farmed_lazy) + ' times** for daily missions only' +
           '. Completing daily missions and SP will mean that you are official finished with ' + major_event_name + '! Congratulations, Commander!'
       )
@@ -141,7 +141,7 @@ async def points(ctx,pt):
         value = 'Completing SP daily, in addition to your missions, will bring your final-day total to *' + str(pt_total_now_daily_black) + ' ' + major_PT +
         '.*\n In order to buy out the full event shop, you will need to clear D3 **' + str(maps_farmed) + ' times** *if you skip or cannot complete SP*' +
         '.\n Clearing both your missions and SP daily reduces your D3 clear count to **' + str(maps_farmed_black) + ' times**'
-        '.\n\n You can save 9300 ' + major_PT + ' by not purchasing the T4 Tech Packs or T3 Parts, reducing your number of D3 clears required' +
+        '.\n\n You can save 57,300 ' + major_PT + ' by skipping the T4 Tech Packs, T3 Parts, and four of the five ship copies, reducing your number of D3 clears required' +
         '.\n You will only need to clear **' + str(maps_farmed_lazy) + ' times** for daily missions only, or **' + str(maps_farmed_black_lazy) + ' times** if you ' +
         'also clear SP.', inline = False
       )
