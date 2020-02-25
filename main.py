@@ -106,44 +106,44 @@ async def points(ctx,pt):
     elif (maps_farmed == 0 and pt_total_now_daily_black >= major_PT_total and pt_total_now_daily < major_PT_total ):
       points_report.add_field(
         name = 'Your event plan:',
-        value = 'Completing SP daily, in addition to your missions, will bring your final-day total to *' + str(pt_total_now_daily_black) + ' ' + major_PT +
-          '.*\n Completing daily missions and SP will mean that you are official finished with ' + major_event_name + '! Congratulations, Commander!'
+        value = 'Completing Special daily, in addition to your missions, will bring your final-day total to *' + str(pt_total_now_daily_black) + ' ' + major_PT +
+          '.*\n Completing daily missions and Special will mean that you are official finished with ' + major_event_name + '! Congratulations, Commander!'
       )
 
     elif (maps_farmed_black == 0 and maps_farmed > 0):
       points_report.add_field(
         name = 'Your event plan:',
-        value = 'Completing SP daily, in addition to your missions, will bring your final-day total to *' + str(pt_total_now_daily_black) + ' ' + major_PT +
-          '.*\n In order to buy out the full event shop, you will need to clear D3 **' + str(maps_farmed) + ' times** *if you skip or cannot complete SP*' +
-          '.\n Completing daily missions and SP, however, will mean that you are official finished with ' + major_event_name + '! Congratulations, Commander!'
+        value = 'Completing Special daily, in addition to your missions, will bring your final-day total to *' + str(pt_total_now_daily_black) + ' ' + major_PT +
+          '.*\n In order to buy out the full event shop, you will need to clear SP5 **' + str(maps_farmed) + ' times** *if you skip or cannot complete Special*' +
+          '.\n Completing daily missions and Special, however, will mean that you are official finished with ' + major_event_name + '! Congratulations, Commander!'
       )
     elif (maps_farmed_lazy == 0 and maps_farmed_black > 0):
       points_report.add_field(
         name = 'Your event plan:',
-        value = 'Completing SP daily, in addition to your missions, will bring your final-day total to *' + str(pt_total_now_daily_black) + ' ' + major_PT +
-          '.*\n In order to buy out the full event shop, you will need to clear D3 **' + str(maps_farmed) + ' times** *if you skip or cannot complete SP*' +
-          '.\n Clearing both your missions and SP daily reduces your D3 clear count to **' + str(maps_farmed_black) + ' times**'
-          '.\n Completing daily missions and SP will mean that you are official finished with ' + major_event_name + '! Congratulations, Commander!'
+        value = 'Completing Special daily, in addition to your missions, will bring your final-day total to *' + str(pt_total_now_daily_black) + ' ' + major_PT +
+          '.*\n In order to buy out the full event shop, you will need to clear SP5 **' + str(maps_farmed) + ' times** *if you skip or cannot complete Special*' +
+          '.\n Clearing both your missions and Special daily reduces your SP5 clear count to **' + str(maps_farmed_black) + ' times**'
+          '.\n Completing daily missions and Special will mean that you are official finished with ' + major_event_name + '! Congratulations, Commander!'
       )
     elif (maps_farmed_black_lazy == 0 and maps_farmed_lazy > 0):
       points_report.add_field(
         name = 'Your event plan:',
-        value = 'Completing SP daily, in addition to your missions, will bring your final-day total to *' + str(pt_total_now_daily_black) + ' ' + major_PT +
-          '.*\n In order to buy out the full event shop, you will need to clear D3 **' + str(maps_farmed) + ' times** *if you skip or cannot complete SP*' +
-          '.\n Clearing both your missions and SP daily reduces your D3 clear count to **' + str(maps_farmed_black) + ' times**'
-          '.\n\n You can save 57,300 ' + major_PT + ' by skipping the T4 Tech Packs, T3 Parts, and four of the five ship copies, reducing your number of D3 clears required' +
+        value = 'Completing Special daily, in addition to your missions, will bring your final-day total to *' + str(pt_total_now_daily_black) + ' ' + major_PT +
+          '.*\n In order to buy out the full event shop, you will need to clear SP5 **' + str(maps_farmed) + ' times** *if you skip or cannot complete Special*' +
+          '.\n Clearing both your missions and Special daily reduces your SP5 clear count to **' + str(maps_farmed_black) + ' times**'
+          '.\n\n You can save 8,700 ' + major_PT + ' by skipping the T4 Tech Packs, T3 Parts, and Cognitive Chips, reducing your number of SP5 clears required' +
           '.\n You will only need to clear **' + str(maps_farmed_lazy) + ' times** for daily missions only' +
-          '. Completing daily missions and SP will mean that you are official finished with ' + major_event_name + '! Congratulations, Commander!'
+          '. Completing daily missions and Special will mean that you are official finished with ' + major_event_name + '! Congratulations, Commander!'
       )
     elif (maps_farmed_black_lazy > 0):
       points_report.add_field(
         name = 'Your event plan:',
-        value = 'Completing SP daily, in addition to your missions, will bring your final-day total to *' + str(pt_total_now_daily_black) + ' ' + major_PT +
-        '.*\n In order to buy out the full event shop, you will need to clear D3 **' + str(maps_farmed) + ' times** *if you skip or cannot complete SP*' +
-        '.\n Clearing both your missions and SP daily reduces your D3 clear count to **' + str(maps_farmed_black) + ' times**'
-        '.\n\n You can save 57,300 ' + major_PT + ' by skipping the T4 Tech Packs, T3 Parts, and four of the five ship copies, reducing your number of D3 clears required' +
+        value = 'Completing Special daily, in addition to your missions, will bring your final-day total to *' + str(pt_total_now_daily_black) + ' ' + major_PT +
+        '.*\n In order to buy out the full event shop, you will need to clear SP5 **' + str(maps_farmed) + ' times** *if you skip or cannot complete Special*' +
+        '.\n Clearing both your missions and Special daily reduces your SP5 clear count to **' + str(maps_farmed_black) + ' times**'
+        '.\n\n You can save 8,700 ' + major_PT + ' by skipping the T4 Tech Packs, T3 Parts, and Cognitive Chips, reducing your number of SP5 clears required' +
         '.\n You will only need to clear **' + str(maps_farmed_lazy) + ' times** for daily missions only, or **' + str(maps_farmed_black_lazy) + ' times** if you ' +
-        'also clear SP.', inline = False
+        'also clear Special.', inline = False
       )
   else:
     if (maps_farmed == 0 and pt_total_now_daily >= major_PT_total):
@@ -154,7 +154,7 @@ async def points(ctx,pt):
     elif (maps_farmed > 0):
       points_report.add_field(
         name = 'Your event plan:',
-        value = 'Completing daily missions will bring your final-day total to *' + str(pt_total_now_daily) + ' ' + major_PT + '.*\n In order to buy out the full event shop, you will need to clear D3 **' + str(maps_farmed) + ' times**.'
+        value = 'Completing daily missions will bring your final-day total to *' + str(pt_total_now_daily) + ' ' + major_PT + '.*\n In order to buy out the full event shop, you will need to clear SP5 **' + str(maps_farmed) + ' times**.'
     )
   if (pt > major_PT_total):
     points_report = discord.Embed(
