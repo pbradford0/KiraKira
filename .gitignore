@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 .env
-=======
-.env
->>>>>>> origin/master
-=======
-.env
->>>>>>> origin/master
+role_assignment_list.txt
+role_prompts.txt
