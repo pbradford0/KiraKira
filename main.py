@@ -7,7 +7,7 @@ from event import event,pt_event
 from discord.ext import commands
 from keep_alive import keep_alive
 
-bot = commands.Bot(command_prefix='>', self_bot=False)
+bot = commands.Bot(command_prefix='>>', self_bot=False)
 daily_reset = '00:00'
 
 # initialize
@@ -85,8 +85,6 @@ async def points(ctx,pt):
       title = 'Commander, we need to have a talk.',
       description = 'You already have enough ' + major_PT + ' to clear out the event shop. What do you need a report from me for?'
     )
-
-  # let's try a cleaner approach. going to build the report one block at a time
   
   points_report = discord.Embed(
     title = 'Commander, here is your report.',
@@ -95,66 +93,73 @@ async def points(ctx,pt):
     'Completing each remaining daily missions brings your final-day total from ' + str(pt) + '  to *' + str(pt_total_now_daily) + ' ' + major_PT +
     '.*\n'
   )
-  if (major_black_PT > 0):
 
+  # cleaning up some of this code: using a string for value
+  report_value = ''
+
+  if (major_black_PT > 0):
+    report_value = 'Completing daily missions will mean that you are official finished with ' + major_event_name + '! Congratulations, Commander!'
     if (maps_farmed == 0 and pt_total_now_daily >= major_PT_total):
       points_report.add_field(
         name = 'Your event plan:',
-        value = 'Completing daily missions will mean that you are official finished with ' + major_event_name + '! Congratulations, Commander!'
+        value = report_value
         )
 
     elif (maps_farmed == 0 and pt_total_now_daily_black >= major_PT_total and pt_total_now_daily < major_PT_total ):
+      report_value = 'Completing the Extra stage daily, in addition to your missions, will bring your final-day total to *' + str(pt_total_now_daily_black) + ' ' + major_PT
+      + '.*\n Completing daily missions and the Extra stage will mean that you are official finished with ' + major_event_name + '! Congratulations, Commander!'
       points_report.add_field(
         name = 'Your event plan:',
-        value = 'Completing Special daily, in addition to your missions, will bring your final-day total to *' + str(pt_total_now_daily_black) + ' ' + major_PT +
-          '.*\n Completing daily missions and Special will mean that you are official finished with ' + major_event_name + '! Congratulations, Commander!'
+        value = report_value
       )
-
     elif (maps_farmed_black == 0 and maps_farmed > 0):
+      report_value = 'Completing the Extra stage daily, in addition to your missions, will bring your final-day total to *' + str(pt_total_now_daily_black) + ' ' + major_PT
+      + '.*\n In order to buy out the full event shop, you will need to clear the final operation stage **' + str(maps_farmed) + ' times** *if you skip or cannot complete the Extra stage*' + '.\n Completing daily missions and the Extra stage, however, will mean that you are official finished with ' + major_event_name + '! Congratulations, Commander!'
       points_report.add_field(
         name = 'Your event plan:',
-        value = 'Completing Special daily, in addition to your missions, will bring your final-day total to *' + str(pt_total_now_daily_black) + ' ' + major_PT +
-          '.*\n In order to buy out the full event shop, you will need to clear SP5 **' + str(maps_farmed) + ' times** *if you skip or cannot complete Special*' +
-          '.\n Completing daily missions and Special, however, will mean that you are official finished with ' + major_event_name + '! Congratulations, Commander!'
+        value = report_value
       )
+    # these steps can be optimized by building report_value one step at a time
     elif (maps_farmed_lazy == 0 and maps_farmed_black > 0):
+      report_value = 'Completing the Extra stage daily, in addition to your missions, will bring your final-day total to *' + str(pt_total_now_daily_black) + ' ' + major_PT
+      + '.*\n In order to buy out the full event shop, you will need to clear the final operation stage **' + str(maps_farmed) + ' times** *if you skip or cannot complete the Extra  stage*' + '.\n Clearing both your missions and the Extra stage daily reduces your the final operation stage clear count to **' + str(maps_farmed_black) + ' times**'
+      + '.\n Completing daily missions and the Extra stage will mean that you are official finished with ' + major_event_name + '! Congratulations, Commander!'
       points_report.add_field(
         name = 'Your event plan:',
-        value = 'Completing Special daily, in addition to your missions, will bring your final-day total to *' + str(pt_total_now_daily_black) + ' ' + major_PT +
-          '.*\n In order to buy out the full event shop, you will need to clear SP5 **' + str(maps_farmed) + ' times** *if you skip or cannot complete Special*' +
-          '.\n Clearing both your missions and Special daily reduces your SP5 clear count to **' + str(maps_farmed_black) + ' times**'
-          '.\n Completing daily missions and Special will mean that you are official finished with ' + major_event_name + '! Congratulations, Commander!'
+        value = report_value
       )
     elif (maps_farmed_black_lazy == 0 and maps_farmed_lazy > 0):
+      report_value = 'Completing the Extra stage daily, in addition to your missions, will bring your final-day total to *' + str(pt_total_now_daily_black) + ' ' + major_PT
+      + '.*\n In order to buy out the full event shop, you will need to clear the final operation stage **' + str(maps_farmed) + ' times** *if you skip or cannot complete the Extra stage*' + '.\n Clearing both your missions and the Extra stage daily reduces your the final operation stage clear count to **' + str(maps_farmed_black) + ' times**'
+      + '.\n\n You can save 8,700 ' + major_PT + ' by skipping the T4 Tech Packs, T3 Parts, and Cognitive Chips, reducing your number of the final operation stage clears required'
+      + '.\n You will only need to clear **' + str(maps_farmed_lazy) + ' times** for daily missions only'
+      + '. Completing daily missions and the Extra stage will mean that you are official finished with ' + major_event_name + '! Congratulations, Commander!'
       points_report.add_field(
         name = 'Your event plan:',
-        value = 'Completing Special daily, in addition to your missions, will bring your final-day total to *' + str(pt_total_now_daily_black) + ' ' + major_PT +
-          '.*\n In order to buy out the full event shop, you will need to clear SP5 **' + str(maps_farmed) + ' times** *if you skip or cannot complete Special*' +
-          '.\n Clearing both your missions and Special daily reduces your SP5 clear count to **' + str(maps_farmed_black) + ' times**'
-          '.\n\n You can save 8,700 ' + major_PT + ' by skipping the T4 Tech Packs, T3 Parts, and Cognitive Chips, reducing your number of SP5 clears required' +
-          '.\n You will only need to clear **' + str(maps_farmed_lazy) + ' times** for daily missions only' +
-          '. Completing daily missions and Special will mean that you are official finished with ' + major_event_name + '! Congratulations, Commander!'
+        value = report_value
       )
     elif (maps_farmed_black_lazy > 0):
+      report_value = 'Completing the Extra stage daily, in addition to your missions, will bring your final-day total to *' + str(pt_total_now_daily_black) + ' ' + major_PT
+      + '.*\n In order to buy out the full event shop, you will need to clear the final operation stage **' + str(maps_farmed) + ' times** *if you skip or cannot complete the Extra stage*' + '.\n Clearing both your missions and the Extra stage daily reduces your the final operation stage clear count to **' + str(maps_farmed_black) + ' times**'
+      + '.\n\n You can save 8,700 ' + major_PT + ' by skipping the T4 Tech Packs, T3 Parts, and Cognitive Chips, reducing your number of the final operation stage clears required'
+      + '.\n You will only need to clear **' + str(maps_farmed_lazy) + ' times** for daily missions only, or **' + str(maps_farmed_black_lazy) + ' times** if you '
+      + 'also clear the Extra stage.'
       points_report.add_field(
         name = 'Your event plan:',
-        value = 'Completing Special daily, in addition to your missions, will bring your final-day total to *' + str(pt_total_now_daily_black) + ' ' + major_PT +
-        '.*\n In order to buy out the full event shop, you will need to clear SP5 **' + str(maps_farmed) + ' times** *if you skip or cannot complete Special*' +
-        '.\n Clearing both your missions and Special daily reduces your SP5 clear count to **' + str(maps_farmed_black) + ' times**'
-        '.\n\n You can save 8,700 ' + major_PT + ' by skipping the T4 Tech Packs, T3 Parts, and Cognitive Chips, reducing your number of SP5 clears required' +
-        '.\n You will only need to clear **' + str(maps_farmed_lazy) + ' times** for daily missions only, or **' + str(maps_farmed_black_lazy) + ' times** if you ' +
-        'also clear Special.', inline = False
+        value = report_value, inline = False
       )
   else:
     if (maps_farmed == 0 and pt_total_now_daily >= major_PT_total):
+      report_value = 'Completing daily missions will mean that you are official finished with ' + major_event_name + '! Congratulations, Commander!'
       points_report.add_field(
         name = 'Your event plan:',
-        value = 'Completing daily missions will mean that you are official finished with ' + major_event_name + '! Congratulations, Commander!'
+        value = report_value
       )
     elif (maps_farmed > 0):
+      report_value = 'Completing daily missions will bring your final-day total to *' + str(pt_total_now_daily) + ' ' + major_PT + '.*\n In order to buy out the full event shop, you will need to clear the final operation stage **' + str(maps_farmed) + ' times**.'
       points_report.add_field(
         name = 'Your event plan:',
-        value = 'Completing daily missions will bring your final-day total to *' + str(pt_total_now_daily) + ' ' + major_PT + '.*\n In order to buy out the full event shop, you will need to clear SP5 **' + str(maps_farmed) + ' times**.'
+        value = report_value
     )
   if (pt > major_PT_total):
     points_report = discord.Embed(

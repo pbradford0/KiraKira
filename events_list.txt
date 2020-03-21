@@ -18,7 +18,7 @@ Ashen_Simulacrum 2019 7 31 2019 8 14
 Superstar_of_the_Blue_Seas 2019 8 7 2019 8 21
 Angel_or_Devil_in_White? 2019 8 7 2019 8 21
 Challenge_Mode_(Season_1) 2019 8 7 2019 9 29
-Maritime_Escort_Mode 2019 8 7 2019 9 4
+Maritime_Escort 2019 8 7 2019 9 4
 Year_In_Review 2019 8 7 2019 9 4
 Albacore's_Fanbook 2019 8 15 2019 9 4
 Ceremonial_Gala_(Login_Bonus) 2019 8 15 2019 9 4
@@ -65,3 +65,7 @@ Z23's_Picture_Report 2020 2 20 2020 3 5
 Northern_Overture 2020 2 27 2020 3 11
 Welcome_to_Sofmap! 2020 3 12 2020 3 25
 Return_of_the_Solomon_Ranger 2020 3 12 2020 3 25
+Under_the_Mist_-_Phase_I 2020 3 19 2020 3 25
+Maritime_Escort 2020 3 19 2020 3 25
+Professor_Z23_(Rerun) 2020 3 19 2020 4 1
+Hibiscus-Scented_Idol? 2020 3 19 2020 4 8
