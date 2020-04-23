@@ -73,3 +73,6 @@ Microlayer_Medley 2020 3 26 2020 4 8
 To_Azur_Lane_with_Blessings 2020 4 9 2020 5 6
 Challenge_Mode_(Season_4) 2020 4 9 2020 7 5
 Construction_Rate_Up_(Fallen_Wings) 2020 4 9 2020 4 15
+Highway_Star_(Rerun) 2020 4 16 2020 4 29
+Crimson_Echoes_(Rerun) 2020 4 23 2020 5 6
+Little_Royal_Knight 2020 4 23 2020 5 6
