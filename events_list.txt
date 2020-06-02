@@ -84,3 +84,6 @@ Manjuu_Misadventures 2020 5 21 2020 6 17
 Bonus_Experience_Campaign_(Cmdr._Lv._30_and_below) 2020 5 21 2020 7 1
 Dreams_of_Love_and_Peace 2020 5 28 2020 6 10
 Colorful_Ceremony 2020 5 28 2020 6 17
+Skybound_Prelude_(Phase_I) 2020 6 3 2020 6 10
+Moonlit_Overture_(Rerun) 2020 6 3 2020 6 10
+Sparkling_Battle_Star_(Rerun) 2020 6 3 2020 6 17
