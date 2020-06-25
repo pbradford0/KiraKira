@@ -89,3 +89,6 @@ Moonlit_Overture_(Rerun) 2020 6 3 2020 6 10
 Sparkling_Battle_Star_(Rerun) 2020 6 3 2020 6 17
 Skybound_Oratorio 2020 6 11 2020 6 24
 Skybound_Prelude_(Phase_II) 2020 6 11 2020 7 1
+Air_Raid_Drills_with_Essex 2020 6 24 2020 7 8
+Manjuu_Grand_Prix 2020 6 24 2020 7 8
+Rate_Up_(Shangri-La) 2020 6 24 2020 7 8
